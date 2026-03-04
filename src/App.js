@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import CreativeSpaceOnePager from './pages/home';
 import './App.css';
 

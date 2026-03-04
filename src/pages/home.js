@@ -43,7 +43,7 @@ export default function CreativeSpaceOnePager() {
             enhance brand value and operational efficiency.
           </p>
           <br />
-          <p><strong>Reg No: 2025/267067/07</strong></p>
+          {/* <p><strong>Reg No: 2025/267067/07</strong></p> */}
         </div>
       </section>
 

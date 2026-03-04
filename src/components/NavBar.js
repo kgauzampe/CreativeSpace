@@ -10,7 +10,7 @@ export default function NavBar() {
     <nav className="navbar">
       <div className="navbar__logo">
         <img src="/img/logo.png" alt="Creative Logo" />
-        CreativeSpace
+       
       </div>
 
       <ul className={`navbar__links ${menuOpen ? "active" : ""}`}>

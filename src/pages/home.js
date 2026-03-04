@@ -60,7 +60,7 @@ export default function CreativeSpaceOnePager() {
       </section>
 
       {/* SERVICES */}
-      <section className="section section-light">
+      <section id="services" className="section section-light">
         <div className="container">
           <h2>Our Services</h2>
 

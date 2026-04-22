@@ -156,3 +156,77 @@ html {
 .download-btn {
 color: #EDE7F6;
 }
+.image-slider {
+  width: 100%;
+  overflow: hidden;
+  background: #FFFFFF; /* optional for contrast */
+  padding: 20px 0;
+}
+
+.slider-track {
+  display: flex;
+  width: calc(250px * 12); /* 6 images × 2 */
+  animation: scroll 20s linear infinite;
+}
+
+.slider-track img {
+  width: 250px;
+  height: 160px;
+  object-fit: cover;
+  margin: 0 10px;
+  border-radius: 10px;
+}
+
+/* Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.premium-carousel {
+  padding: 60px 0;
+  background: #FFFFFF;
+}
+
+.mySwiper {
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.mySwiper .swiper-slide {
+  width: 300px;
+  height: 200px;
+  transition: transform 0.3s ease;
+}
+
+.mySwiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Center slide emphasis */
+.swiper-slide-active {
+  transform: scale(1.1);
+}
+
+/* Slight fade for side slides */
+.swiper-slide {
+  opacity: 0.6;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+}
+
+/* Navigation arrows styling */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffffff;
+}

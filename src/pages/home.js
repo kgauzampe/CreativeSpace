@@ -1,6 +1,12 @@
 import React from "react";
 import "./home.css";
 import NavBar from "../components/NavBar";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Autoplay, Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
 
 export default function CreativeSpaceOnePager() {
   return (
@@ -49,6 +55,36 @@ export default function CreativeSpaceOnePager() {
           {/* <p><strong>Reg No: 2025/267067/07</strong></p> */}
         </div>
       </section>
+  {/* PREMIUM IMAGE CAROUSEL */}
+<section className="premium-carousel">
+  <Swiper
+    modules={[EffectCoverflow, Autoplay, Navigation]}
+    effect="coverflow"
+    grabCursor={true}
+    centeredSlides={true}
+    slidesPerView={"auto"}
+    loop={true}
+    autoplay={{
+      delay: 2500,
+      disableOnInteraction: false,
+    }}
+    navigation={true}
+    coverflowEffect={{
+      rotate: 0,
+      stretch: 0,
+      depth: 200,
+      modifier: 2.5,
+      slideShadows: false,
+    }}
+    className="mySwiper"
+  >
+    {[1,2,3,4,5,6].map((num) => (
+      <SwiperSlide key={num}>
+        <img src={`/img/c${num}.jpeg`} alt={`slide-${num}`} />
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</section>
 
       {/* EXECUTIVE SUMMARY */}
       <section className="section section-gray">
@@ -90,6 +126,31 @@ export default function CreativeSpaceOnePager() {
           </div>
         </div>
       </section>
+      {/* IMAGE SLIDER */}
+<section className="image-slider">
+  <div className="slider-track">
+    <img src="/img/c1.jpeg" alt="slide1" />
+    <img src="/img/c2.jpeg" alt="slide2" />
+    <img src="/img/c3.jpeg" alt="slide3" />
+    <img src="/img/c4.jpeg" alt="slide4" />
+    <img src="/img/c5.jpeg" alt="slide5" />
+    <img src="/img/c6.jpeg" alt="slide6" />
+    <img src="/img/c7.jpeg" alt="slide1" />
+    <img src="/img/c8.jpeg" alt="slide2" />
+    <img src="/img/c9.jpeg" alt="slide3" />
+    <img src="/img/c10.jpeg" alt="slide4" />
+    <img src="/img/c11.jpeg" alt="slide5" />
+    <img src="/img/c12.jpeg" alt="slide6" />
+
+    {/* duplicate for smooth loop */}
+    {/* <img src="/img/c1.jpeg" alt="slide1" />
+    <img src="/img/c2.jpeg" alt="slide2" />
+    <img src="/img/c3.jpeg" alt="slide3" />
+    <img src="/img/c4.jpeg" alt="slide4" />
+    <img src="/img/c5.jpeg" alt="slide5" />
+    <img src="/img/c6.jpeg" alt="slide6" /> */}
+  </div>
+</section>
 
       {/* FOOTER */}
       <footer className="footer">

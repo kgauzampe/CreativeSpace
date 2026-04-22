@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./home.css";
 import NavBar from "../components/NavBar";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,8 +7,12 @@ import { EffectCoverflow, Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
+import { motion } from "framer-motion";
 
 export default function CreativeSpaceOnePager() {
+  const text = "Where Creativity Meets Innovation";
+  const [selectedImage, setSelectedImage] = useState(null);
+
   return (
     <div>
         <div className="Nav">
@@ -19,8 +23,7 @@ export default function CreativeSpaceOnePager() {
       <section className="hero">
 
         <div>
-            
-          <h1>Where Creativity Meets Innovation</h1>
+              <h1 className="typewriter">{text}</h1>
           <p>
             CREATIVE_SPACE is a forward-thinking design agency delivering
             innovative branding, marketing, design, ISO certification,
@@ -39,7 +42,13 @@ export default function CreativeSpaceOnePager() {
       {/* ABOUT */}
       <section id="about" className="section section-light">
         <div className="container">
+            <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
           <h2>About Us</h2>
+          </motion.div>
           <p>
             CREATIVE_SPACE is passionate about crafting innovative solutions
             that elevate brands and experiences. Built on creativity and
@@ -80,16 +89,34 @@ export default function CreativeSpaceOnePager() {
   >
     {[1,2,3,4,5,6].map((num) => (
       <SwiperSlide key={num}>
-        <img src={`/img/c${num}.jpeg`} alt={`slide-${num}`} />
+        <img
+          src={`/img/c${num}.jpeg`}
+          alt={`slide-${num}`}
+          onClick={() => setSelectedImage(`/img/c${num}.jpeg`)}
+          style={{ cursor: "pointer" }}
+        />
       </SwiperSlide>
     ))}
   </Swiper>
+
+  {/* LIGHTBOX */}
+  {selectedImage && (
+    <div className="lightbox" onClick={() => setSelectedImage(null)}>
+      <img src={selectedImage} alt="preview" />
+    </div>
+  )}
 </section>
 
       {/* EXECUTIVE SUMMARY */}
       <section className="section section-gray">
         <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
           <h2>Executive Summary</h2>
+          </motion.div>
           <p>
             We deliver cutting-edge branding, marketing, design,
             ISO certification, and training solutions tailored to each
@@ -101,8 +128,13 @@ export default function CreativeSpaceOnePager() {
       {/* SERVICES */}
       <section id="services" className="section section-light">
         <div className="container">
+           <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
           <h2>Our Services</h2>
-
+            </motion.div>
           <div className="cards">
             <div className="card">
               <h3>Branding & Identity</h3>

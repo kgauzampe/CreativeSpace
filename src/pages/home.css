@@ -255,3 +255,6 @@ color: #EDE7F6;
   max-height: 90%;
   border-radius: 10px;
 }
+.card:hover {
+  transform: rotateY(180deg);
+}

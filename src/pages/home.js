@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./home.css";
 import NavBar from "../components/NavBar";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,20 +10,30 @@ import "swiper/css/navigation";
 import { motion } from "framer-motion";
 
 export default function CreativeSpaceOnePager() {
-  const text = "Where Creativity Meets Innovation";
+  // const text = "Where Creativity Meets Innovation";
   const [selectedImage, setSelectedImage] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 50);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   return (
     <div>
         <div className="Nav">
-            <NavBar />
+            <NavBar className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}/>
         </div>
 
       {/* HERO */}
       <section className="hero">
 
         <div>
-              <h1 className="typewriter">{text}</h1>
+              <h1> Where Creativity Meets Innovation</h1>
           <p>
             CREATIVE_SPACE is a forward-thinking design agency delivering
             innovative branding, marketing, design, ISO certification,

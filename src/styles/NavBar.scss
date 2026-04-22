@@ -5,8 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* remove position fixed/sticky */
-  position: relative;  
+  position: relative; // allows dropdown to position correctly
 
   &__logo {
     font-size: 1.3rem;
@@ -71,9 +70,11 @@
     &.active span:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
     }
+
     &.active span:nth-child(2) {
       opacity: 0;
     }
+
     &.active span:nth-child(3) {
       transform: rotate(-45deg) translate(5px, -5px);
     }

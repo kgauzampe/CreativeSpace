@@ -153,3 +153,6 @@ body {
 html {
   scroll-behavior: smooth;
 }
+.download-btn {
+color: #EDE7F6;
+}

@@ -21,8 +21,11 @@ export default function CreativeSpaceOnePager() {
             and training solutions.
           </p>
           <br />
-          <a href="#about" className="cta-button">
+          {/* <a href="#about" className="cta-button">
             Learn More
+          </a> */}
+          <a href="/portfolio.pdf" download className="download-btn">
+            Download Portfolio
           </a>
         </div>
       </section>

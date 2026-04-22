@@ -156,7 +156,7 @@ export default function CreativeSpaceOnePager() {
       <footer className="footer">
         <h3>CREATIVE_SPACE</h3>
         <p>Your Partner in Exceptional Design</p>
-         <p>Powered By Mpumelelo Tech</p>
+         <p>Developed By Mpumelelo Tech</p>
         <p>© {new Date().getFullYear()} | Reg 2025/267067/07</p>
       </footer>
 

@@ -23,6 +23,42 @@ useEffect(() => {
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
 
+const handleChange = (e) => {
+  setForm({
+    ...form,
+    [e.target.name]: e.target.value
+  });
+};
+
+const [form, setForm] = useState({
+  name: "",
+  email: "",
+  message: ""
+});
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("http://localhost:5000/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(form)
+    });
+
+    if (res.ok) {
+      alert("Message sent successfully!");
+      setForm({ name: "", email: "", message: "" });
+    } else {
+      alert("Something went wrong");
+    }
+  } catch (error) {
+    alert("Server error");
+  }
+};
+
   return (
     <div>
         <div className="Nav">
@@ -191,6 +227,42 @@ useEffect(() => {
     <img src="/img/c4.jpeg" alt="slide4" />
     <img src="/img/c5.jpeg" alt="slide5" />
     <img src="/img/c6.jpeg" alt="slide6" /> */}
+  </div>
+</section>
+{/* CONTACT */}
+<section id="contact" className="section section-light">
+  <div className="container">
+    <h2>Contact Us</h2>
+
+    <form className="contact-form" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        value={form.name}
+        onChange={handleChange}
+        required
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        value={form.email}
+        onChange={handleChange}
+        required
+      />
+
+      <textarea
+        name="message"
+        placeholder="Your Message"
+        value={form.message}
+        onChange={handleChange}
+        required
+      />
+
+      <button type="submit">Send Message</button>
+    </form>
   </div>
 </section>
 
